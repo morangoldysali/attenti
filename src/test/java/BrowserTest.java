@@ -56,6 +56,7 @@ public class BrowserTest {
 	private void weightTest() {
 
 	String answer= "";
+	driver.navigate().to("https://www.metric-conversions.org/");
 	try {
 		driver.findElement(By.xpath("//a[text()='Weight']")).click();
 		Thread.sleep(1000);
