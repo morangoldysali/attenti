@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="17622" started-at="2020-01-29T12:53:33 IST" finished-at="2020-01-29T12:53:51 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="17622" started-at="2020-01-29T12:53:33 IST" finished-at="2020-01-29T12:53:51 IST">
+      <class name="BrowserTest">
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:BrowserTest@78e67e0a]" name="setUpTest" is-config="true" duration-ms="8473" started-at="2020-01-29T12:53:33 IST" finished-at="2020-01-29T12:53:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="weightTest()[pri:0, instance:BrowserTest@78e67e0a]" name="weightTest" duration-ms="4405" started-at="2020-01-29T12:53:41 IST" finished-at="2020-01-29T12:53:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- weightTest -->
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:BrowserTest@78e67e0a]" name="tearDownTest" is-config="true" duration-ms="4687" started-at="2020-01-29T12:53:46 IST" finished-at="2020-01-29T12:53:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+      </class> <!-- BrowserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

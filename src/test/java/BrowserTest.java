@@ -1,27 +1,35 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserTest {
+	WebDriver driver = null;
 	
-	public static void main(String[] args) {
-		
+	@BeforeTest
+	public void setUpTest() {
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get("https://www.metric-conversions.org/");
-		mainTest(driver, "Celsius to Fahrenheit", "32", "32°C= 89.60000°F");
-		driver.navigate().to("https://www.metric-conversions.org/");
-		mainTest(driver, "Meters to Feet", "10", "10m= 32ft 9.700788in");
-		driver.navigate().to("https://www.metric-conversions.org/");
-		weightTest(driver);
-		driver.close();
-
-		
 	}
 	
-private static void mainTest(WebDriver driver, String requestedTest, String enterValue, String expectedResult) {
+	@Test
+	public void CelsiusToFahrenheitTest() {
+		
+		driver.navigate().to("https://www.metric-conversions.org/");
+		mainTest(driver, "Celsius to Fahrenheit", "32", "32°C= 89.60000°F");
+	}
+	
+	@Test
+	public void MeterToFeetTest() {
+		
+		driver.navigate().to("https://www.metric-conversions.org/");
+		mainTest(driver, "Meters to Feet", "10", "10m= 32ft 9.700788in");
+	}
+	
+	private void mainTest(WebDriver driver, String requestedTest, String enterValue, String expectedResult) {
 		
 		String answer= "";
 		try {
@@ -44,7 +52,8 @@ private static void mainTest(WebDriver driver, String requestedTest, String ente
 			System.out.print(requestedTest+ " doesnt return the right value, " + answer+"\n");
 	}
 
-private static void weightTest(WebDriver driver) {
+	@Test
+	private void weightTest() {
 
 	String answer= "";
 	try {
@@ -68,6 +77,12 @@ private static void weightTest(WebDriver driver) {
 		System.out.print("ounces to grams is working. value is : " + answer +"\n");
 	else 
 		System.out.print("ounces to grams doesnt return the right value, " + answer+ "\n");
-}
+	}
+
+	@AfterTest
+	public void tearDownTest() {
+		driver.close();
+		driver.quit();
+	}
 
 }
